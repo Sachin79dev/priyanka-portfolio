@@ -2197,7 +2197,7 @@
 
         .close-mob {
             position: absolute;
-            top: 1.5rem;
+            top: 4.5rem;
             right: 5%;
             font-size: 1.8rem;
             background: none;
@@ -2286,7 +2286,25 @@
             }
 
             .hero-name {
-                font-size: clamp(2.8rem, 11vw, 5rem);
+                font-size: clamp(2.5rem, 11vw, 5rem);
+            }
+
+            .about-badge {
+                padding: .5rem .9rem;
+                border-radius: 10px;
+            }
+
+            .about-badge .num {
+                font-size: 1rem;
+            }
+
+            .badge-tr {
+                top: 22%;
+                right: 0px;
+            }
+
+            .badge-tl {
+                top: 54px;
             }
 
             .exp-grid {
@@ -2312,12 +2330,33 @@
             }
 
             .badge-br {
-                right: -10px;
-                bottom: 2rem;
+                right: 188px;
+                bottom: -2.5rem;
             }
 
             .badge-tl {
                 left: -10px;
+            }
+
+            .social-tube-title {
+                font-size: 1.2rem;
+            }
+
+            .social-tube-sub {
+                font-size: 0.8rem;
+            }
+
+            .social-tube {
+                width: 78%;
+            }
+
+
+            .work-card {
+                min-width: 254px;
+            }
+
+            .mob-nav a {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -2663,7 +2702,7 @@
                 </div>
                 <div class="exp-card aos aos-scale" style="transition-delay:.42s">
                     <div class="exp-card-banner bg-g3">
-                        <img src="Content Marketing & Writing.png" alt="">
+                        <img src="Digital Marketing & Growth Strategist.png" alt="">
                     </div>
                     <div class="exp-card-body">
                         <div class="exp-card-tags">
@@ -3139,11 +3178,15 @@
                     <p class="sub">I'll get back to you within 24 hours.</p>
                     <form id="contactForm">
                         <div class="fg-row">
-                            <div class="fg"><label>Your Name</label><input type="text" name="from_name" placeholder="John Doe" required></div>
-                            <div class="fg"><label>Email</label><input type="email" name="reply_to" placeholder="hello@email.com" required></div>
+                            <div class="fg"><label>Your Name</label><input type="text" name="from_name"
+                                    placeholder="John Doe" required></div>
+                            <div class="fg"><label>Email</label><input type="email" name="reply_to"
+                                    placeholder="hello@email.com" required></div>
                         </div>
-                        <div class="fg"><label>Subject</label><input type="text" name="subject" placeholder="Project Collaboration" required></div>
-                        <div class="fg"><label>Message</label><textarea name="message" placeholder="Tell me about your project..." required></textarea></div>
+                        <div class="fg"><label>Subject</label><input type="text" name="subject"
+                                placeholder="Project Collaboration" required></div>
+                        <div class="fg"><label>Message</label><textarea name="message"
+                                placeholder="Tell me about your project..." required></textarea></div>
                         <button type="submit" class="form-btn" id="formBtn">Send Message →</button>
                         <div class="form-msg" id="formMsg"></div>
                     </form>
