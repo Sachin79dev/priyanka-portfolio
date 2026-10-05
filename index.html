@@ -2449,8 +2449,8 @@
                     <div class="lbl">Happy Clients</div>
                 </div>
                 <div class="about-badge badge-tr">
-                    <div class="num" data-target="72">0</div>
-                    <div class="lbl">K+ Community</div>
+                    <div class="num" data-target="72" data-suffix="k+">0</div>
+                    <div class="lbl">Community</div>
                 </div>
             </div>
 
@@ -3223,12 +3223,16 @@
         function animCount(el) {
             if (el.dataset.animated) return;
             el.dataset.animated = '1';
-            const target = +el.dataset.target, dur = 1600;
+            const target = Number(el.dataset.target), suffix = el.dataset.suffix || '+', dur = 1600;
+            if (!Number.isFinite(target)) {
+                console.error('Invalid counter target:', el.dataset.target, el);
+                return;
+            }
             const t0 = performance.now();
             (function tick(now) {
                 const p = Math.min((now - t0) / dur, 1);
                 const ease = 1 - Math.pow(1 - p, 3);
-                el.textContent = Math.round(ease * target) + (p >= 1 ? '+' : '');
+                el.textContent = Math.round(ease * target) + (p >= 1 ? suffix : '');
                 if (p < 1) requestAnimationFrame(tick);
             })(t0);
         }
