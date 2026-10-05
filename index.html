@@ -127,7 +127,6 @@
         .hstat,
         .about-badge,
         .social-tube,
-        .slider-btn,
         nav,
         footer {
             transition: none;
@@ -1299,7 +1298,7 @@
         }
 
         /* ═══════════════════════════════════════════════════════
-   WORK & RESULTS (SLIDER SECTION)
+    WORK & RESULTS CARD GRID
 ═══════════════════════════════════════════════════════ */
         #work {
             background: var(--bg2);
@@ -1327,52 +1326,16 @@
             color: var(--yellow);
         }
 
-        .slider-controls {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .slider-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--surface);
-            border: 1.5px solid var(--border2);
-            color: var(--text);
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: none;
-            transition: all .3s ease !important;
-            box-shadow: var(--shadow-card);
-        }
-
-        .slider-btn:hover {
-            border-color: var(--yellow);
-            color: var(--yellow);
-            transform: scale(1.08);
-        }
-
-        .slider-container {
-            overflow: hidden;
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.8rem;
             width: 100%;
             margin: 0 auto;
-            border-radius: 24px;
             padding: .5rem 0;
         }
 
-        .slider-track {
-            display: flex;
-            gap: 1.8rem;
-            transition: transform .5s cubic-bezier(.25, 1, .5, 1);
-            user-select: none;
-        }
-
         .work-card {
-            flex: 0 0 calc(33.333% - 1.2rem);
-            min-width: 320px;
             background: var(--surface);
             border: 1.5px solid var(--border);
             border-radius: 24px;
@@ -1396,60 +1359,83 @@
         }
 
         .work-category {
-            font-family: 'Syne Mono', monospace;
-            font-size: .75rem;
-            letter-spacing: .12em;
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            font-family: 'Syne', sans-serif;
+            font-size: .8rem;
+            letter-spacing: .08em;
             color: var(--yellow);
             text-transform: uppercase;
-            margin-bottom: .8rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.4;
+            font-weight: 700;
+        }
+
+        .work-category::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--yellow);
+            box-shadow: 0 0 0 6px rgba(245, 230, 66, .12);
+            flex-shrink: 0;
         }
 
         .work-card h3 {
-            font-size: 1.3rem;
+            font-size: clamp(1.5rem, 1.8vw, 3rem);
             font-weight: 800;
             color: var(--text);
-            margin-bottom: .8rem;
-            line-height: 1.3;
+            margin-bottom: 1.1rem;
+            line-height: 1.25;
+            letter-spacing: -.04em;
         }
 
         .work-card p {
-            font-size: .88rem;
+            font-size: .98rem;
             color: var(--text2);
             line-height: 1.7;
             font-weight: 300;
         }
 
         .work-metric-box {
-            margin: 1.5rem 0;
-            padding: 1.2rem;
-            background: var(--bg2);
-            border: 1px solid var(--border);
-            border-radius: 16px;
+            margin: 1.8rem 0 0;
+            padding: 1.15rem 1rem;
+            background: rgba(14, 15, 20, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 110px;
         }
 
         .work-metric-val {
             font-family: 'Syne', sans-serif;
-            font-size: 1.8rem;
+            font-size: clamp(2.6rem, 3vw, 3.5rem);
             font-weight: 800;
             color: var(--yellow);
-            line-height: 1.1;
+            line-height: 1;
+            letter-spacing: -.05em;
         }
 
         .work-metric-lbl {
-            font-size: .75rem;
+            font-size: .74rem;
             color: var(--text3);
             text-transform: uppercase;
             letter-spacing: .08em;
-            margin-top: .3rem;
+            margin-top: .7rem;
+            line-height: 1.4;
         }
 
         .work-stats-mini {
-            display: flex;
-            justify-content: space-around;
-            border-top: 1px solid var(--border);
-            padding-top: 1.2rem;
-            margin-top: auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: .8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 1.3rem;
+            margin-top: 1.5rem;
         }
 
         .mini-stat {
@@ -1458,36 +1444,18 @@
 
         .mini-stat-num {
             font-family: 'Syne', sans-serif;
-            font-size: .95rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--green);
+            line-height: 1.1;
         }
 
         .mini-stat-lbl {
             font-size: .68rem;
             color: var(--text3);
-        }
-
-        .slider-dots {
-            display: flex;
-            justify-content: center;
-            gap: .6rem;
-            margin-top: 2rem;
-        }
-
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--border2);
-            cursor: none;
-            transition: all .3s ease !important;
-        }
-
-        .dot.active {
-            background: var(--yellow);
-            width: 28px;
-            border-radius: 10px;
+            margin-top: .2rem;
+            line-height: 1.4;
+            text-transform: none;
         }
 
         /* ═══════════════════════════════════════════════════════
@@ -1508,12 +1476,24 @@
         .exp-layout .sticky {
             position: sticky;
             top: 90px;
+            align-self: start;
+            height: fit-content;
+            padding-top: .5rem;
         }
 
         .timeline-wrap {
             display: flex;
             flex-direction: column;
             gap: 0;
+        }
+
+        .timeline-wrap::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .timeline-wrap::-webkit-scrollbar-thumb {
+            background: rgba(245, 230, 66, .35);
+            border-radius: 999px;
         }
 
         .tl-item {
@@ -2257,8 +2237,8 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .work-card {
-                flex: 0 0 calc(50% - 1rem);
+            .work-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
@@ -2324,8 +2304,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .work-card {
-                flex: 0 0 100%;
+            .work-grid {
+                grid-template-columns: 1fr;
             }
 
             .contact-layout,
@@ -2363,10 +2343,6 @@
                 width: 78%;
             }
 
-
-            .work-card {
-                min-width: 254px;
-            }
 
             .mob-nav a {
                 font-size: 1.3rem;
@@ -2747,7 +2723,7 @@
         </div>
     </section>
 
-    <!-- ──── NEW SECTION: WORK & RESULTS (SLIDER) ─────────── -->
+    <!-- ──── WORK & RESULTS ───────────────────────────────── -->
     <section id="work">
         <div class="w">
             <div class="work-header">
@@ -2756,161 +2732,91 @@
                     <h2 class="section-title aos aos-up" style="transition-delay:.1s">Work &amp; <span
                             class="hl-y">Results</span></h2>
                 </div>
-                <div class="slider-controls aos aos-up" style="transition-delay:.2s">
-                    <button class="slider-btn" id="slidePrev" aria-label="Previous slide">←</button>
-                    <button class="slider-btn" id="slideNext" aria-label="Next slide">→</button>
-                </div>
             </div>
 
-            <!-- Slider Container -->
-            <div class="slider-container aos aos-up" style="transition-delay:.3s" id="sliderContainer">
-                <div class="slider-track" id="sliderTrack">
-
-                    <!-- Slide 1 -->
-                    <div class="work-card">
-                        <div class="work-card-top">
-                            <div class="work-category">Social Media Growth &amp; Branding</div>
-                            <h3>Instagram &amp; Facebook Community Scale</h3>
-                            <p>Built a combined organic community of 60,000+ followers through viral aesthetic reels,
-                                engaging carousel carousels, and daily content strategy.</p>
+            <div class="work-grid aos aos-up" style="transition-delay:.3s">
+                <div class="work-card">
+                    <div class="work-card-top">
+                        <div class="work-category">GRAPHIC DESIGN</div>
+                        <h3>Scroll-Stopping Visuals That<br>Build Brands</h3>
+                        <p>Designed aesthetic social posts, carousels, Pinterest pins and brand creatives that look
+                            clean, feel on-brand and get noticed in a crowded feed.</p>
+                    </div>
+                    <div class="work-metric-box">
+                        <div class="work-metric-val">80+</div>
+                        <div class="work-metric-lbl">Campaign Videos Produced</div>
+                    </div>
+                    <div class="work-stats-mini">
+                        <div class="mini-stat">
+                            <div class="mini-stat-num">100+</div>
+                            <div class="mini-stat-lbl">Reels Edited</div>
                         </div>
-                        <div class="work-metric-box">
-                            <div class="work-metric-val">60K+</div>
-                            <div class="work-metric-lbl">Total Community Followers</div>
+                        <div class="mini-stat">
+                            <div class="mini-stat-num">80%</div>
+                            <div class="mini-stat-lbl">Retention Rate</div>
                         </div>
-                        <div class="work-stats-mini">
-                            <div class="mini-stat">
-                                <div class="mini-stat-num">2.5M+</div>
-                                <div class="mini-stat-lbl">Impressions</div>
-                            </div>
-                            <div class="mini-stat">
-                                <div class="mini-stat-num">4.8%</div>
-                                <div class="mini-stat-lbl">Eng. Rate</div>
-                            </div>
-                            <div class="mini-stat">
-                                <div class="mini-stat-num">150+</div>
-                                <div class="mini-stat-lbl">Reels Made</div>
-                            </div>
+                        <div class="mini-stat">
+                            <div class="mini-stat-num">100%</div>
+                            <div class="mini-stat-lbl">Client Approval</div>
                         </div>
                     </div>
-
-                    <!-- Slide 2 -->
-                    <div class="work-card">
-                        <div class="work-card-top">
-                            <div class="work-category">Performance Marketing &amp; Paid Ads</div>
-                            <h3>High-Converting Lead Gen Campaigns</h3>
-                            <p>Designed and scaled targeted Meta lead ads with custom retargeting funnels, driving
-                                qualified sales leads for travel and agency clients.</p>
-                        </div>
-                        <div class="work-metric-box">
-                            <div class="work-metric-val">1,200+</div>
-                            <div class="work-metric-lbl">Qualified Leads Generated</div>
-                        </div>
-                        <div class="work-stats-mini">
-                            <div class="mini-stat">
-                                <div class="mini-stat-num">300%</div>
-                                <div class="mini-stat-lbl">Average ROAS</div>
-                            </div>
-                            <div class="mini-stat">
-                                <div class="mini-stat-num">-38%</div>
-                                <div class="mini-stat-lbl">Lower CPL</div>
-                            </div>
-                            <div class="mini-stat">
-                                <div class="mini-stat-num">15+</div>
-                                <div class="mini-stat-lbl">Ad Variants</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="work-card">
-                        <div class="work-card-top">
-                            <div class="work-category">LinkedIn B2B Personal Branding</div>
-                            <h3>LinkedIn Growth &amp; Thought Leadership</h3>
-                            <p>Grew professional LinkedIn profile to 12,000+ targeted B2B connections and followers
-                                through insightful digital marketing carousels and posts.</p>
-                        </div>
-                        <div class="work-metric-box">
-                            <div class="work-metric-val">12K+</div>
-                            <div class="work-metric-lbl">LinkedIn Followers</div>
-                        </div>
-                        <div class="work-stats-mini">
-                            <div class="mini-stat">
-                                <div class="mini-stat-num">150K+</div>
-                                <div class="mini-stat-lbl">Post Views</div>
-                            </div>
-                            <div class="mini-stat">
-                                <div class="mini-stat-num">500+</div>
-                                <div class="mini-stat-lbl">B2B Contacts</div>
-                            </div>
-                            <div class="mini-stat">
-                                <div class="mini-stat-num">95%</div>
-                                <div class="mini-stat-lbl">Organic</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 4 -->
-                    <div class="work-card">
-                        <div class="work-card-top">
-                            <div class="work-category">SEO &amp; Google Business Profile</div>
-                            <h3>Local Business Rankings &amp; Visibility</h3>
-                            <p>Optimized client websites and Google My Business profiles to achieve #1 local rankings,
-                                driving organic calls and store visits.</p>
-                        </div>
-                        <div class="work-metric-box">
-                            <div class="work-metric-val">+250%</div>
-                            <div class="work-metric-lbl">Organic Traffic Boost</div>
-                        </div>
-                        <div class="work-stats-mini">
-                            <div class="mini-stat">
-                                <div class="mini-stat-num">#1</div>
-                                <div class="mini-stat-lbl">Map Rankings</div>
-                            </div>
-                            <div class="mini-stat">
-                                <div class="mini-stat-num">85%</div>
-                                <div class="mini-stat-lbl">More Calls</div>
-                            </div>
-                            <div class="mini-stat">
-                                <div class="mini-stat-num">15+</div>
-                                <div class="mini-stat-lbl">Keywords Ranked</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 5 -->
-                    <div class="work-card">
-                        <div class="work-card-top">
-                            <div class="work-category">Creative Video Production</div>
-                            <h3>Short-Form Video &amp; Promotional Content</h3>
-                            <p>Produced high-retention video content for YouTube and social campaigns using mobile
-                                editing suites like VN, InShot, and Veed.io.</p>
-                        </div>
-                        <div class="work-metric-box">
-                            <div class="work-metric-val">80+</div>
-                            <div class="work-metric-lbl">Campaign Videos Produced</div>
-                        </div>
-                        <div class="work-stats-mini">
-                            <div class="mini-stat">
-                                <div class="mini-stat-num">100+</div>
-                                <div class="mini-stat-lbl">Reels Edited</div>
-                            </div>
-                            <div class="mini-stat">
-                                <div class="mini-stat-num">80%</div>
-                                <div class="mini-stat-lbl">Retention Rate</div>
-                            </div>
-                            <div class="mini-stat">
-                                <div class="mini-stat-num">100%</div>
-                                <div class="mini-stat-lbl">Client Approval</div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-            </div>
 
-            <!-- Slider Dots -->
-            <div class="slider-dots" id="sliderDots"></div>
+                <div class="work-card">
+                    <div class="work-card-top">
+                        <div class="work-category">SOCIAL MEDIA &amp; ADS</div>
+                        <h3>Instagram &amp;<br>Facebook<br>Community Scale</h3>
+                        <p>Built a combined organic community of 60,000+ followers through viral aesthetic reels,
+                            engaging carousel carousels, and daily content strategy.</p>
+                    </div>
+                    <div class="work-metric-box">
+                        <div class="work-metric-val">60K+</div>
+                        <div class="work-metric-lbl">Total Community Followers</div>
+                    </div>
+                    <div class="work-stats-mini">
+                        <div class="mini-stat">
+                            <div class="mini-stat-num">2.5M+</div>
+                            <div class="mini-stat-lbl">Impressions</div>
+                        </div>
+                        <div class="mini-stat">
+                            <div class="mini-stat-num">4.8%</div>
+                            <div class="mini-stat-lbl">Eng. Rate</div>
+                        </div>
+                        <div class="mini-stat">
+                            <div class="mini-stat-num">150+</div>
+                            <div class="mini-stat-lbl">Reels Made</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-card-top">
+                        <div class="work-category">PERFORMANCE MARKETING &amp; PAID ADS</div>
+                        <h3>High-Converting<br>Lead Gen<br>Campaigns</h3>
+                        <p>Designed and scaled targeted Meta lead ads with custom retargeting funnels, driving qualified
+                            sales leads for travel and agency clients.</p>
+                    </div>
+                    <div class="work-metric-box">
+                        <div class="work-metric-val">1,200+</div>
+                        <div class="work-metric-lbl">Qualified Leads Generated</div>
+                    </div>
+                    <div class="work-stats-mini">
+                        <div class="mini-stat">
+                            <div class="mini-stat-num">300%</div>
+                            <div class="mini-stat-lbl">Average ROAS</div>
+                        </div>
+                        <div class="mini-stat">
+                            <div class="mini-stat-num">-38%</div>
+                            <div class="mini-stat-lbl">Lower CPL</div>
+                        </div>
+                        <div class="mini-stat">
+                            <div class="mini-stat-num">15+</div>
+                            <div class="mini-stat-lbl">Ad Variants</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
@@ -3319,129 +3225,6 @@
                 if (p < 1) requestAnimationFrame(tick);
             })(t0);
         }
-
-        /* ── WORK & RESULTS SLIDER (SEAMLESS INFINITE LOOP + AUTOPLAY) ── */
-        const sliderContainer = document.getElementById('sliderContainer');
-        const track = document.getElementById('sliderTrack');
-        const originalSlides = Array.from(track.children);
-        const totalReal = originalSlides.length;
-        const prevBtn = document.getElementById('slidePrev');
-        const nextBtn = document.getElementById('slideNext');
-        const dotsNav = document.getElementById('sliderDots');
-
-        function getVisibleSlides() {
-            if (window.innerWidth <= 768) return 1;
-            if (window.innerWidth <= 1100) return 2;
-            return 3;
-        }
-
-        const CLONE_COUNT = 3; // covers the max number of cards visible at once (desktop)
-
-        // Clone the tail of the deck and place copies before the real cards,
-        // then clone the head and place copies after — so the strip never
-        // visibly "runs out" in either direction.
-        const headClones = originalSlides.slice(-CLONE_COUNT).map(s => s.cloneNode(true));
-        const tailClones = originalSlides.slice(0, CLONE_COUNT).map(s => s.cloneNode(true));
-
-        const frag = document.createDocumentFragment();
-        headClones.forEach(c => frag.appendChild(c));
-        originalSlides.forEach(s => frag.appendChild(s));
-        tailClones.forEach(c => frag.appendChild(c));
-        track.innerHTML = '';
-        track.appendChild(frag);
-
-        const slides = Array.from(track.children);
-        let currentIndex = CLONE_COUNT; // start on the first real slide
-        let isJumping = false;
-
-        function createDots() {
-            dotsNav.innerHTML = '';
-            for (let i = 0; i < totalReal; i++) {
-                const dot = document.createElement('div');
-                dot.className = 'dot';
-                dot.addEventListener('click', () => goToRealSlide(i));
-                dotsNav.appendChild(dot);
-            }
-            updateDots();
-        }
-
-        function updateDots() {
-            const realIndex = ((currentIndex - CLONE_COUNT) % totalReal + totalReal) % totalReal;
-            Array.from(dotsNav.children).forEach((dot, idx) => {
-                dot.classList.toggle('active', idx === realIndex);
-            });
-        }
-
-        function updateSlider(animate = true) {
-            const cardWidth = slides[0].getBoundingClientRect().width;
-            const gap = 28.8; // 1.8rem in px
-            const moveAmount = (cardWidth + gap) * currentIndex;
-            track.style.transition = animate ? '' : 'none';
-            track.style.transform = `translateX(-${moveAmount}px)`;
-            if (!animate) {
-                track.offsetHeight; // force reflow so future moves animate again
-                track.style.transition = '';
-            }
-            updateDots();
-        }
-
-        function settleLoop() {
-            if (isJumping) return;
-            if (currentIndex >= CLONE_COUNT + totalReal) {
-                isJumping = true;
-                currentIndex -= totalReal;
-                updateSlider(false);
-                isJumping = false;
-            } else if (currentIndex < CLONE_COUNT) {
-                isJumping = true;
-                currentIndex += totalReal;
-                updateSlider(false);
-                isJumping = false;
-            }
-        }
-
-        function step(dir) {
-            currentIndex += dir;
-            updateSlider(true);
-            setTimeout(settleLoop, 520); // just after the .5s CSS transition ends
-        }
-
-        function goToRealSlide(i) {
-            currentIndex = CLONE_COUNT + i;
-            updateSlider(true);
-        }
-
-        prevBtn.addEventListener('click', () => { step(-1); resetAutoplay(); });
-        nextBtn.addEventListener('click', () => { step(1); resetAutoplay(); });
-
-        window.addEventListener('resize', () => updateSlider(false));
-
-        createDots();
-        updateSlider(false);
-
-        // Touch & Swipe Support for Slider
-        let touchStartX = 0, touchEndX = 0;
-        track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-        track.addEventListener('touchend', e => {
-            touchEndX = e.changedTouches[0].screenX;
-            if (touchStartX - touchEndX > 50) nextBtn.click();
-            if (touchEndX - touchStartX > 50) prevBtn.click();
-        }, { passive: true });
-
-        // Continuous autoplay — loops forever, pauses on hover/touch, resumes after
-        let autoplayTimer = null;
-        function startAutoplay() {
-            autoplayTimer = setInterval(() => step(1), 3500);
-        }
-        function resetAutoplay() {
-            clearInterval(autoplayTimer);
-            startAutoplay();
-        }
-        sliderContainer.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
-        sliderContainer.addEventListener('mouseleave', startAutoplay);
-        sliderContainer.addEventListener('touchstart', () => clearInterval(autoplayTimer), { passive: true });
-        sliderContainer.addEventListener('touchend', () => resetAutoplay(), { passive: true });
-        startAutoplay();
 
         /* ── CONTACT FORM — EMAILJS INTEGRATION ──
            1. Replace YOUR_PUBLIC_KEY with your EmailJS Public Key (Account > General).
