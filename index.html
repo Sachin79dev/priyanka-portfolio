@@ -2280,6 +2280,26 @@
             animation: blink 2s infinite;
         }
 
+        .svc-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .svc-visual img {
+            width: 100%;
+            max-width: 520px;
+            height: auto;
+            display: block;
+        }
+
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.6rem;
+            position: relative;
+        }
+
         .code-win {
             background: #0b0c11;
             border: 1px solid var(--border2);
@@ -3286,14 +3306,8 @@
                     <div class="svc-availability aos aos-up" style="transition-delay:.3s">Taking new projects</div>
                 </div>
 
-                <div class="code-win aos aos-right" style="transition-delay:.2s">
-                    <div class="code-bar"><i></i><i></i><i></i><span>hero.html</span></div>
-<div class="code-body"><span class="c">&lt;!-- your idea → live website --&gt;</span>
-<span class="k">&lt;section</span> <span class="f">class</span>=<span class="s">"hero"</span><span class="k">&gt;</span>
-  <span class="k">&lt;h1&gt;</span>Your brand, <span class="y">online</span><span class="k">&lt;/h1&gt;</span>
-  <span class="k">&lt;p&gt;</span>Fast. Responsive. Beautiful.<span class="k">&lt;/p&gt;</span>
-  <span class="k">&lt;a</span> <span class="f">href</span>=<span class="s">"#contact"</span><span class="k">&gt;</span>Start a project<span class="k">&lt;/a&gt;</span>
-<span class="k">&lt;/section&gt;</span><span class="caret"></span></div>
+                <div class="svc-visual aos aos-right in" style="transition-delay:.2s">
+                    <img src="Designer.svg" alt="Frontend developer and designer illustration">
                 </div>
             </div>
 
