@@ -742,9 +742,6 @@
         /* ── HERO RIGHT VISUAL & SOCIAL TUBES ── */
         .hero-visual-wrap {
             position: relative;
-            /* display: flex; */
-            /* justify-content: center; */
-            /* align-items: center; */
             animation: fadeUp .9s 1.4s both;
             margin-bottom: 2rem;
         }
@@ -752,7 +749,6 @@
         .hero-card-container {
             position: relative;
             width: 100%;
-            /* max-width: 440px; */
         }
 
         .hero-photo-frame {
@@ -812,11 +808,9 @@
         /* ── HERO SOCIAL TUBES / CARDS ── */
         .social-tubes-wrap {
             display: flex;
-            /* flex-direction: column; */
             gap: 1.2rem;
             margin-top: 3rem;
             flex-wrap: wrap;
-            /* justify-content: center; */
         }
 
         .social-tube {
@@ -974,8 +968,6 @@
         }
 
         .about-card-main {
-            /*background: var(--surface);*/
-            /* border: 1px solid var(--border2); */
             border-radius: 32px;
             overflow: hidden;
             aspect-ratio: 4 / 5;
@@ -984,7 +976,6 @@
             align-items: center;
             justify-content: flex-end;
             position: relative;
-            /* box-shadow: var(--shadow-card); */
         }
 
         .about-card-main img {
@@ -2206,6 +2197,423 @@
         }
 
         /* ═══════════════════════════════════════════════════════
+   SERVICES (Frontend · UI/UX · Graphic Design)
+═══════════════════════════════════════════════════════ */
+        #services {
+            background: var(--bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #services::before {
+            content: '';
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            right: -180px;
+            top: 8%;
+            background: rgba(167, 139, 250, .16);
+            filter: blur(110px);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .svc-top {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4.5rem;
+            position: relative;
+        }
+
+        .svc-top .section-title {
+            font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+            font-weight: 800;
+            letter-spacing: -.03em;
+            line-height: 1.05;
+            margin-bottom: 1.3rem;
+        }
+
+        .svc-top .hl-y {
+            color: var(--yellow);
+        }
+
+        .svc-top .hl-p {
+            color: var(--purple);
+        }
+
+        .svc-lead {
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--text2);
+            max-width: 520px;
+            margin-bottom: 1.8rem;
+        }
+
+        .svc-lead strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .svc-availability {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            padding: .5rem 1rem;
+            border: 1px solid rgba(78, 255, 160, .25);
+            background: rgba(78, 255, 160, .08);
+            border-radius: 2rem;
+            font-family: 'Syne', sans-serif;
+            font-size: .78rem;
+            font-weight: 700;
+            color: var(--green);
+        }
+
+        .svc-availability::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+            animation: blink 2s infinite;
+        }
+
+        .code-win {
+            background: #0b0c11;
+            border: 1px solid var(--border2);
+            border-radius: 20px;
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+            transform: rotate(1.5deg);
+            transition: transform .5s ease !important;
+        }
+
+        .code-win.aos {
+            transform: translateX(48px);
+        }
+
+        .code-win.aos.in {
+            transform: rotate(1.5deg);
+        }
+
+        .code-win.aos.in:hover {
+            transform: rotate(0);
+        }
+
+        .code-bar {
+            display: flex;
+            align-items: center;
+            gap: .45rem;
+            padding: .8rem 1.1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(255, 255, 255, .03);
+        }
+
+        .code-bar i {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .code-bar i:nth-child(1) {
+            background: #ff5f57;
+        }
+
+        .code-bar i:nth-child(2) {
+            background: #febc2e;
+        }
+
+        .code-bar i:nth-child(3) {
+            background: #28c840;
+        }
+
+        .code-bar span {
+            margin-left: .8rem;
+            font-family: 'Syne Mono', monospace;
+            font-size: .72rem;
+            color: #7c7f93;
+        }
+
+        .code-body {
+            padding: 1.4rem 1.5rem 1.6rem;
+            font-family: 'Syne Mono', monospace;
+            font-size: .8rem;
+            line-height: 1.9;
+            color: #c9cbe0;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        .code-body .k {
+            color: #a78bfa;
+        }
+
+        .code-body .f {
+            color: #4ef6ff;
+        }
+
+        .code-body .s {
+            color: #4effa0;
+        }
+
+        .code-body .y {
+            color: #f5e642;
+        }
+
+        .code-body .c {
+            color: #5c5f72;
+        }
+
+        .code-body .caret {
+            display: inline-block;
+            width: 7px;
+            height: 1em;
+            background: #f5e642;
+            vertical-align: text-bottom;
+            animation: blink 1s steps(1) infinite;
+        }
+
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.6rem;
+            position: relative;
+        }
+
+        .svc-card {
+            --accent: var(--yellow);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--accent);
+            border-radius: 22px;
+            padding: 2rem 1.8rem 1.8rem;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .svc-card.in:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+        }
+
+        .svc-card.c-dev {
+            --accent: var(--cyan);
+        }
+
+        .svc-card.c-ux {
+            --accent: var(--purple);
+        }
+
+        .svc-card.c-gfx {
+            --accent: var(--pink);
+        }
+
+        .svc-ico {
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.3rem;
+            background: color-mix(in srgb, var(--accent) 16%, transparent);
+            border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+        }
+
+        .svc-card h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            color: var(--text);
+            margin-bottom: .6rem;
+        }
+
+        .svc-card>p {
+            font-size: .9rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--text2);
+            margin-bottom: 1.3rem;
+        }
+
+        .svc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: .55rem;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .svc-list li {
+            display: flex;
+            gap: .6rem;
+            font-size: .85rem;
+            color: var(--text2);
+            line-height: 1.5;
+        }
+
+        .svc-list li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .svc-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .4rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .svc-stack span {
+            padding: .25rem .7rem;
+            border-radius: 2rem;
+            font-size: .72rem;
+            font-weight: 600;
+            color: var(--accent);
+            background: color-mix(in srgb, var(--accent) 12%, transparent);
+        }
+
+        .svc-process {
+            margin-top: 4.5rem;
+            position: relative;
+        }
+
+        .svc-process h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -.02em;
+            margin-bottom: 1.8rem;
+        }
+
+        .svc-steps {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.2rem;
+            counter-reset: step;
+        }
+
+        .svc-step {
+            counter-increment: step;
+            padding: 1.4rem 1.3rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+        }
+
+        .svc-step::before {
+            content: counter(step);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--yellow);
+            color: #0e0f14;
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: .9rem;
+            margin-bottom: 1rem;
+        }
+
+        .svc-step h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: .4rem;
+            color: var(--text);
+        }
+
+        .svc-step p {
+            font-size: .82rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--text2);
+        }
+
+        .svc-cta {
+            margin-top: 4rem;
+            padding: 2.8rem 3rem;
+            background: var(--yellow);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .svc-cta::after {
+            content: '</>';
+            position: absolute;
+            right: 22%;
+            top: -30px;
+            font-family: 'Syne Mono', monospace;
+            font-size: 9rem;
+            color: rgba(0, 0, 0, .07);
+            pointer-events: none;
+        }
+
+        .svc-cta h3 {
+            font-size: clamp(1.4rem, 2.6vw, 2rem);
+            font-weight: 800;
+            letter-spacing: -.03em;
+            color: #0e0f14;
+            margin-bottom: .3rem;
+        }
+
+        .svc-cta p {
+            font-size: .92rem;
+            color: rgba(14, 15, 20, .72);
+        }
+
+        .svc-cta-btns {
+            display: flex;
+            gap: .8rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .svc-btn-dark,
+        .svc-btn-line {
+            padding: .9rem 1.8rem;
+            border-radius: 2rem;
+            font-family: 'Syne', sans-serif;
+            font-size: .88rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: none;
+            transition: transform .3s ease !important;
+        }
+
+        .svc-btn-dark {
+            background: #0e0f14;
+            color: #fff;
+        }
+
+        .svc-btn-line {
+            border: 1.5px solid #0e0f14;
+            color: #0e0f14;
+        }
+
+        .svc-btn-dark:hover,
+        .svc-btn-line:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ═══════════════════════════════════════════════════════
    RESPONSIVE MEDIA QUERIES
 ═══════════════════════════════════════════════════════ */
         @media (max-width: 1100px) {
@@ -2258,6 +2666,16 @@
             .exp-layout .sticky {
                 position: relative;
                 top: 0;
+            }
+
+            .svc-top {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .svc-grid,
+            .svc-steps {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
@@ -2347,9 +2765,29 @@
                 width: 78%;
             }
 
-
             .mob-nav a {
                 font-size: 1.3rem;
+            }
+
+            .svc-grid,
+            .svc-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .svc-cta {
+                padding: 2rem 1.6rem;
+            }
+
+            .code-win.aos.in {
+                transform: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .code-body .caret,
+            .svc-availability::before {
+                animation: none;
             }
         }
     </style>
@@ -2375,6 +2813,7 @@
         <a href="#about" onclick="closeMobNav()">About</a>
         <a href="#expertise" onclick="closeMobNav()">Expertise</a>
         <a href="#work" onclick="closeMobNav()">Work &amp; Results</a>
+        <a href="#services" onclick="closeMobNav()">Services</a>
         <a href="#experience" onclick="closeMobNav()">Experience</a>
         <a href="#tools" onclick="closeMobNav()">Tools</a>
         <a href="#education" onclick="closeMobNav()">Education</a>
@@ -2391,6 +2830,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#expertise">Expertise</a></li>
             <li><a href="#work">Work &amp; Results</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#tools">Tools</a></li>
             <li><a href="#education">Education</a></li>
@@ -2827,6 +3267,116 @@
         </div>
     </section>
 
+    <!-- ──── SERVICES (Frontend · UI/UX · Graphic Design) ──── -->
+    <section id="services">
+        <div class="w">
+
+            <div class="svc-top">
+                <div>
+                    <div class="eyebrow aos aos-up">Web &amp; Design Services</div>
+                    <h2 class="section-title aos aos-up" style="transition-delay:.1s">
+                        Need a website that<br>looks <span class="hl-p">sharp</span> and works <span
+                            class="hl-y">fast?</span>
+                    </h2>
+                    <p class="svc-lead aos aos-up" style="transition-delay:.2s">
+                        Marketing brings people to your brand. I build the <strong>website, interface and
+                            visuals</strong> they land on, so visitors stay, trust you and take action. Frontend
+                        developer with a designer's eye, one person from first sketch to live site.
+                    </p>
+                    <div class="svc-availability aos aos-up" style="transition-delay:.3s">Taking new projects</div>
+                </div>
+
+                <div class="code-win aos aos-right" style="transition-delay:.2s">
+                    <div class="code-bar"><i></i><i></i><i></i><span>hero.html</span></div>
+<div class="code-body"><span class="c">&lt;!-- your idea → live website --&gt;</span>
+<span class="k">&lt;section</span> <span class="f">class</span>=<span class="s">"hero"</span><span class="k">&gt;</span>
+  <span class="k">&lt;h1&gt;</span>Your brand, <span class="y">online</span><span class="k">&lt;/h1&gt;</span>
+  <span class="k">&lt;p&gt;</span>Fast. Responsive. Beautiful.<span class="k">&lt;/p&gt;</span>
+  <span class="k">&lt;a</span> <span class="f">href</span>=<span class="s">"#contact"</span><span class="k">&gt;</span>Start a project<span class="k">&lt;/a&gt;</span>
+<span class="k">&lt;/section&gt;</span><span class="caret"></span></div>
+                </div>
+            </div>
+
+            <div class="svc-grid">
+                <article class="svc-card c-dev aos aos-up">
+                    <div class="svc-ico">💻</div>
+                    <h3>Frontend Development</h3>
+                    <p>Clean, fast websites that look right on every phone, tablet and laptop.</p>
+                    <ul class="svc-list">
+                        <li>Portfolio, business and landing pages</li>
+                        <li>Responsive, mobile-first layouts</li>
+                        <li>Smooth animations and contact forms</li>
+                        <li>Design-to-code from Figma</li>
+                    </ul>
+                    <div class="svc-stack"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span>
+                    </div>
+                </article>
+
+                <article class="svc-card c-ux aos aos-up" style="transition-delay:.1s">
+                    <div class="svc-ico">🧩</div>
+                    <h3>UI/UX Design</h3>
+                    <p>Interfaces that are easy to use, so visitors find what they need and act on it.</p>
+                    <ul class="svc-list">
+                        <li>Wireframes and clickable prototypes</li>
+                        <li>Website and mobile app screens</li>
+                        <li>Design systems with consistent colors and type</li>
+                        <li>Layout fixes for existing sites</li>
+                    </ul>
+                    <div class="svc-stack"><span>Figma</span><span>Wireframing</span><span>Prototyping</span></div>
+                </article>
+
+                <article class="svc-card c-gfx aos aos-up" style="transition-delay:.2s">
+                    <div class="svc-ico">🎨</div>
+                    <h3>Graphic Design</h3>
+                    <p>Visuals that make your brand recognisable and your posts hard to scroll past.</p>
+                    <ul class="svc-list">
+                        <li>Logos and brand kits</li>
+                        <li>Social media posts and banners</li>
+                        <li>Brochures, flyers and presentations</li>
+                        <li>Ad creatives and thumbnails</li>
+                    </ul>
+                    <div class="svc-stack"><span>Photoshop</span><span>Illustrator</span><span>Canva</span></div>
+                </article>
+            </div>
+
+            <div class="svc-process">
+                <h3 class="aos aos-up">How a project works</h3>
+                <div class="svc-steps">
+                    <div class="svc-step aos aos-up">
+                        <h4>Brief</h4>
+                        <p>You share your goals, audience and references. I reply with scope, timeline and price.</p>
+                    </div>
+                    <div class="svc-step aos aos-up" style="transition-delay:.08s">
+                        <h4>Design</h4>
+                        <p>Wireframes and visual mockups for your approval before any code is written.</p>
+                    </div>
+                    <div class="svc-step aos aos-up" style="transition-delay:.16s">
+                        <h4>Build</h4>
+                        <p>I develop the approved design and share a preview link so you can follow progress.</p>
+                    </div>
+                    <div class="svc-step aos aos-up" style="transition-delay:.24s">
+                        <h4>Launch</h4>
+                        <p>Testing on all devices, then go-live, plus a round of fixes after launch.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="svc-cta aos aos-scale">
+                <div>
+                    <h3>Have a project in mind?</h3>
+                    <p>Tell me what you need. You'll get a reply with a plan and quote within 24 hours.</p>
+                </div>
+                <div class="svc-cta-btns">
+                    <!-- EDIT: put your own email + WhatsApp number (91 + number, no spaces) -->
+                    <a href="mailto:YOUR_EMAIL@gmail.com?subject=Project%20enquiry" class="svc-btn-dark">Email me</a>
+                    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer"
+                        class="svc-btn-line">WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- ──── EXPERIENCE ────────────────────────────────────── -->
     <section id="experience">
         <div class="w">
@@ -3129,6 +3679,7 @@
                 <a href="#about">About</a>
                 <a href="#expertise">Expertise</a>
                 <a href="#work">Work &amp; Results</a>
+                <a href="#services">Services</a>
                 <a href="#experience">Experience</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -3194,7 +3745,7 @@
             requestAnimationFrame(animR);
         })();
 
-        document.querySelectorAll('a, button, .exp-card, .tl-content, .hstat, .clink, .social-tube, .work-card').forEach(el => {
+        document.querySelectorAll('a, button, .exp-card, .tl-content, .hstat, .clink, .social-tube, .work-card, .svc-card').forEach(el => {
             el.addEventListener('mouseenter', () => { ring.style.width = '48px'; ring.style.height = '48px'; });
             el.addEventListener('mouseleave', () => { ring.style.width = '32px'; ring.style.height = '32px'; });
         });
